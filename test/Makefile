@@ -7,7 +7,7 @@ TEST = test
 INC_DIR = ../Core/Inc
 SRC_DIR = ../Core/Src
 
-OBJS = ece5210.o fixed_point.o
+OBJS = ece5210.o
 INCS = ece5210.h fixed_point.h
 
 all: $(TEST) $(EXEC)
@@ -25,9 +25,6 @@ unittests.o: unittests.c $(INC_DIR)/*h
 	$(CC) -c -o $@ $< $(CFLAGS) -I $(INC_DIR)
 
 ece5210.o: $(SRC_DIR)/ece5210.c $(INC_DIR)/*h
-	$(CC) -c -o $@ $< $(CFLAGS) -I $(INC_DIR)
-
-fixed_point.o: $(SRC_DIR)/fixed_point.c $(INC_DIR)/*h
 	$(CC) -c -o $@ $< $(CFLAGS) -I $(INC_DIR)
 
 .PHONY: clean
